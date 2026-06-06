@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import { useAuth } from '../hooks/useAuth'
 import {
   User, Mail, Shield, Bell, Zap, Users, FileText,
-  Puzzle, Layout, Save, Toggle3dOff, Check, ChevronRight,
+  Puzzle, Layout, Save, Check, ChevronRight,
   Phone, MapPin, Building2, Globe, Moon, Sun, Monitor,
-  AlertTriangle, Lock, Eye, EyeOff, Plus, Trash2,
+  Lock, Plus, Trash2,
 } from 'lucide-react'
 
 // ─── Shared UI ─────────────────────────────────────────────

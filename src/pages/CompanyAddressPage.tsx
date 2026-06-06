@@ -24,14 +24,15 @@ export const CompanyAddressPage: React.FC = () => {
     e.preventDefault()
     setSaving(true)
     await addAddress({
+      id: Date.now().toString(),
       title: form.title,
-      street: form.street,
-      line2: form.line2,
+      streetAddress: form.street,
+      addressLine2: form.line2,
       city: form.city,
       state: form.state,
-      zip: form.zip,
+      zipCode: form.zip,
       country: form.country,
-      isPrimary: true,
+      isPermanent: true,
     })
     setSaving(false)
     navigate('/company/team')
