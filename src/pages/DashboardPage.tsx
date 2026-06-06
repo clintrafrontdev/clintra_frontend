@@ -10,6 +10,13 @@ import { RevenueChart } from '../components/ui/RevenueChart'
 import { ActivityChart } from '../components/ui/ActivityChart'
 import { SettingsPage } from './SettingsPage'
 import { ProfilePage } from './ProfilePage'
+import { MarketingPage } from './dashboard/MarketingPage'
+import { HRPage } from './dashboard/HRPage'
+import { SalesPage } from './dashboard/SalesPage'
+import { ProjectsPage } from './dashboard/ProjectsPage'
+import { ReportsPage } from './dashboard/ReportsPage'
+import { SecurityPage } from './dashboard/SecurityPage'
+import { LicensePage } from './dashboard/LicensePage'
 import {
   DollarSign, Users, FolderKanban, TrendingUp,
   Menu, Bell, Search, ChevronDown,
@@ -167,10 +174,17 @@ export const DashboardPage: React.FC = () => {
         {/* ── Page Content ── */}
         <main className="flex-1 overflow-y-auto">
           <Routes>
-            <Route path="/"          element={<DashboardHome />} />
-            <Route path="/settings"  element={<SettingsPage />} />
-            <Route path="/profile"   element={<ProfilePage />} />
-            <Route path="*"          element={<DashboardHome />} />
+            <Route path="/"           element={<DashboardHome />} />
+            <Route path="/settings"   element={<SettingsPage />} />
+            <Route path="/profile"    element={<ProfilePage />} />
+            <Route path="/marketing"  element={<MarketingPage />} />
+            <Route path="/hr"         element={<HRPage />} />
+            <Route path="/sales"      element={<SalesPage />} />
+            <Route path="/projects"   element={<ProjectsPage />} />
+            <Route path="/reports"    element={<ReportsPage />} />
+            <Route path="/security"   element={<SecurityPage />} />
+            <Route path="/license"    element={<LicensePage />} />
+            <Route path="*"           element={<DashboardHome />} />
           </Routes>
         </main>
       </div>
