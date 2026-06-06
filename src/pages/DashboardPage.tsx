@@ -11,6 +11,10 @@ import { ActivityChart } from '../components/ui/ActivityChart'
 import { SettingsPage } from './SettingsPage'
 import { ProfilePage } from './ProfilePage'
 import { MarketingPage } from './dashboard/MarketingPage'
+import { MessagesPage } from './dashboard/MessagesPage'
+import { NotificationsPage } from './dashboard/NotificationsPage'
+import { MailPage } from './dashboard/MailPage'
+import { HelpPage } from './dashboard/HelpPage'
 import { HRPage } from './dashboard/HRPage'
 import { SalesPage } from './dashboard/SalesPage'
 import { ProjectsPage } from './dashboard/ProjectsPage'
@@ -134,10 +138,10 @@ export const DashboardPage: React.FC = () => {
           {/* Right icons */}
           <div className="ml-auto flex items-center gap-1">
             {[
-              { icon: <MessageSquare className="w-4 h-4" />, onClick: () => {} },
-              { icon: <HelpCircle    className="w-4 h-4" />, onClick: () => {} },
+              { icon: <MessageSquare className="w-4 h-4" />, onClick: () => navigate('/dashboard/messages') },
+              { icon: <HelpCircle    className="w-4 h-4" />, onClick: () => navigate('/dashboard/help') },
               { icon: <Settings      className="w-4 h-4" />, onClick: () => navigate('/dashboard/settings') },
-              { icon: <Mail          className="w-4 h-4" />, onClick: () => {} },
+              { icon: <Mail          className="w-4 h-4" />, onClick: () => navigate('/dashboard/mail') },
             ].map((btn, i) => (
               <button key={i} onClick={btn.onClick}
                 className="w-8 h-8 rounded-lg flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition">
@@ -146,7 +150,7 @@ export const DashboardPage: React.FC = () => {
             ))}
 
             {/* Bell */}
-            <button className="relative w-8 h-8 rounded-lg flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition">
+            <button onClick={() => navigate('/dashboard/notifications')} className="relative w-8 h-8 rounded-lg flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition">
               <Bell className="w-4 h-4" />
               <span className="absolute top-1 right-1 w-4 h-4 bg-red-500 text-white text-[9px] font-bold rounded-full flex items-center justify-center">2</span>
             </button>
@@ -183,8 +187,12 @@ export const DashboardPage: React.FC = () => {
             <Route path="/projects"   element={<ProjectsPage />} />
             <Route path="/reports"    element={<ReportsPage />} />
             <Route path="/security"   element={<SecurityPage />} />
-            <Route path="/license"    element={<LicensePage />} />
-            <Route path="*"           element={<DashboardHome />} />
+            <Route path="/license"        element={<LicensePage />} />
+            <Route path="/messages"       element={<MessagesPage />} />
+            <Route path="/notifications"  element={<NotificationsPage />} />
+            <Route path="/mail"           element={<MailPage />} />
+            <Route path="/help"           element={<HelpPage />} />
+            <Route path="*"              element={<DashboardHome />} />
           </Routes>
         </main>
       </div>
